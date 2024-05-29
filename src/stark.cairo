@@ -15,11 +15,11 @@ use cairo_verifier::{
         // },
         // === DEX END ===
         // === RECURSIVE BEGIN ===
-        layouts::recursive::{
-            traces::{TracesConfig, TracesConfigTrait}, public_input::RecursivePublicInputImpl,
-            traces::{TracesUnsentCommitment, TracesCommitment, TracesDecommitment, TracesWitness},
-            constants::{NUM_COLUMNS_FIRST, NUM_COLUMNS_SECOND},
-        },
+        // layouts::recursive::{
+        //     traces::{TracesConfig, TracesConfigTrait}, public_input::RecursivePublicInputImpl,
+        //     traces::{TracesUnsentCommitment, TracesCommitment, TracesDecommitment, TracesWitness},
+        //     constants::{NUM_COLUMNS_FIRST, NUM_COLUMNS_SECOND},
+        // },
     // === RECURSIVE END ===
     // === RECURSIVE_WITH_POSEIDON BEGIN ===
     // layouts::recursive_with_poseidon::{
@@ -37,11 +37,11 @@ use cairo_verifier::{
     // },
     // === SMALL END ===
     // === STARKNET BEGIN ===
-    // layouts::starknet::{
-    // traces::{TracesConfig, TracesConfigTrait}, public_input::StarknetPublicInputImpl,
-    // traces::{TracesUnsentCommitment, TracesCommitment, TracesDecommitment, TracesWitness},
-    // constants::{NUM_COLUMNS_FIRST, NUM_COLUMNS_SECOND}
-    // },
+    layouts::starknet::{
+    traces::{TracesConfig, TracesConfigTrait}, public_input::StarknetPublicInputImpl,
+    traces::{TracesUnsentCommitment, TracesCommitment, TracesDecommitment, TracesWitness},
+    constants::{NUM_COLUMNS_FIRST, NUM_COLUMNS_SECOND}
+    },
     // === STARKNET END ===
     // === STARKNET_WITH_KECCAK BEGIN ===
     // layouts::starknet_with_keccak::{

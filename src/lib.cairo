@@ -1,6 +1,6 @@
 mod air;
 // === RECURSIVE BEGIN ===
-mod benches;
+// mod benches;
 // === RECURSIVE END ===
 mod channel;
 mod common;
@@ -15,7 +15,7 @@ mod table_commitment;
 mod vector_commitment;
 
 // === RECURSIVE BEGIN ===
-mod tests;
+// mod tests;
 // === RECURSIVE END ===
 
 use cairo_verifier::{
@@ -24,16 +24,16 @@ use cairo_verifier::{
     // air::layouts::dex::public_input::DexPublicInputImpl as PublicInputImpl,
     // === DEX END ===
     // === RECURSIVE BEGIN ===
-    air::layouts::recursive::public_input::RecursivePublicInputImpl as PublicInputImpl,
-// === RECURSIVE END ===
-// === RECURSIVE_WITH_POSEIDON BEGIN ===
-// air::layouts::recursive_with_poseidon::public_input::RecursiveWithPoseidonPublicInputImpl as PublicInputImpl,
-// === RECURSIVE_WITH_POSEIDON END ===
-// === SMALL BEGIN ===
-// air::layouts::small::public_input::SmallPublicInputImpl as PublicInputImpl,
-// === SMALL END ===
-// === STARKNET BEGIN ===
-// air::layouts::starknet::public_input::StarknetPublicInputImpl as PublicInputImpl,
+    // air::layouts::recursive::public_input::RecursivePublicInputImpl as PublicInputImpl,
+    // === RECURSIVE END ===
+    // === RECURSIVE_WITH_POSEIDON BEGIN ===
+    // air::layouts::recursive_with_poseidon::public_input::RecursiveWithPoseidonPublicInputImpl as PublicInputImpl,
+    // === RECURSIVE_WITH_POSEIDON END ===
+    // === SMALL BEGIN ===
+    // air::layouts::small::public_input::SmallPublicInputImpl as PublicInputImpl,
+    // === SMALL END ===
+    // === STARKNET BEGIN ===
+    air::layouts::starknet::public_input::StarknetPublicInputImpl as PublicInputImpl,
 // === STARKNET END ===
 // === STARKNET_WITH_KECCAK BEGIN ===
 // air::layouts::starknet_with_keccak::public_input::StarknetWithKeccakPublicInputImpl as PublicInputImpl,

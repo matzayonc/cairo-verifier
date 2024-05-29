@@ -5,7 +5,7 @@ use cairo_verifier::{
     // === DEX BEGIN ===
     // air::layouts::dex::traces::traces_decommit, // === DEX END ===
     // === RECURSIVE BEGIN ===
-    air::layouts::recursive::traces::traces_decommit,
+    // air::layouts::recursive::traces::traces_decommit,
     // === RECURSIVE END ===
     // === RECURSIVE_WITH_POSEIDON BEGIN ===
     // air::layouts::recursive_with_poseidon::traces::traces_decommit,
@@ -14,7 +14,7 @@ use cairo_verifier::{
     // air::layouts::small::traces::traces_decommit,
     // === SMALL END ===
     // === STARKNET BEGIN ===
-    // air::layouts::starknet::traces::traces_decommit,
+    air::layouts::starknet::traces::traces_decommit,
     // === STARKNET END ===
     // === STARKNET_WITH_KECCAK BEGIN ===
     // air::layouts::starknet_with_keccak::traces::traces_decommit,

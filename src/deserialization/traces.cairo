@@ -5,9 +5,9 @@ use cairo_verifier::{
     // },
     // === DEX END ===
     // === RECURSIVE BEGIN ===
-    air::layouts::recursive::{
-        traces::TracesConfig, traces::{TracesUnsentCommitment, TracesDecommitment, TracesWitness}
-    },
+    // air::layouts::recursive::{
+    //     traces::TracesConfig, traces::{TracesUnsentCommitment, TracesDecommitment, TracesWitness}
+    // },
     // === RECURSIVE END ===
     // === RECURSIVE_WITH_POSEIDON BEGIN ===
     // air::layouts::recursive_with_poseidon::{
@@ -20,9 +20,9 @@ use cairo_verifier::{
     // },
     // === SMALL END ===
     // === STARKNET BEGIN ===
-    // air::layouts::starknet::{
-    // traces::TracesConfig, traces::{TracesUnsentCommitment, TracesDecommitment, TracesWitness}
-    // },
+    air::layouts::starknet::{
+    traces::TracesConfig, traces::{TracesUnsentCommitment, TracesDecommitment, TracesWitness}
+    },
     // === STARKNET END ===
     // === STARKNET_WITH_KECCAK BEGIN ===
     // air::layouts::starknet_with_keccak::{

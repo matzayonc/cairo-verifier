@@ -6,10 +6,10 @@ use cairo_verifier::{
     // },
     // === DEX END ===
     // === RECURSIVE BEGIN ===
-    air::layouts::recursive::{
-        constants::{CONSTRAINT_DEGREE, N_CONSTRAINTS, MASK_SIZE}, public_input::PublicInput,
-        traces::traces_commit,
-    },
+    // air::layouts::recursive::{
+    //     constants::{CONSTRAINT_DEGREE, N_CONSTRAINTS, MASK_SIZE}, public_input::PublicInput,
+    //     traces::traces_commit,
+    // },
     // === RECURSIVE END ===
     // === RECURSIVE_WITH_POSEIDON BEGIN ===
     // air::layouts::recursive_with_poseidon::{
@@ -24,10 +24,10 @@ use cairo_verifier::{
     // },
     // === SMALL END ===
     // === STARKNET BEGIN ===
-    // air::layouts::starknet::{
-    // constants::{CONSTRAINT_DEGREE, N_CONSTRAINTS, MASK_SIZE}, public_input::PublicInput,
-    // traces::traces_commit,
-    // },
+    air::layouts::starknet::{
+        constants::{CONSTRAINT_DEGREE, N_CONSTRAINTS, MASK_SIZE}, public_input::PublicInput,
+        traces::traces_commit,
+    },
     // === STARKNET END ===
     // === STARKNET_WITH_KECCAK BEGIN ===
     // air::layouts::starknet_with_keccak::{

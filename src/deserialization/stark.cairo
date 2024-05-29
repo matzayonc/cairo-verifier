@@ -7,7 +7,7 @@ use cairo_verifier::{
     // air::layouts::dex::traces::TracesConfig,
     // === DEX END ===
     // === RECURSIVE BEGIN ===
-    air::layouts::recursive::traces::TracesConfig,
+    // air::layouts::recursive::traces::TracesConfig,
     // === RECURSIVE END ===
     // === RECURSIVE_WITH_POSEIDON BEGIN ===
     // air::layouts::recursive_with_poseidon::traces::TracesConfig,
@@ -16,7 +16,7 @@ use cairo_verifier::{
     // air::layouts::small::traces::TracesConfig,
     // === SMALL END ===
     // === STARKNET BEGIN ===
-    // air::layouts::starknet::traces::TracesConfig,
+    air::layouts::starknet::traces::TracesConfig,
     // === STARKNET END ===
     // === STARKNET_WITH_KECCAK BEGIN ===
     // air::layouts::starknet_with_keccak::traces::TracesConfig,
