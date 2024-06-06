@@ -7,7 +7,7 @@ fn main() -> anyhow::Result<()> {
     let mut input = String::new();
     stdin().read_to_string(&mut input)?;
 
-    let parsed = parse(input)?;
+    let parsed = parse(&input)?;
 
     let config: VecFelt252 = serde_json::from_str(&parsed.config.to_string()).unwrap();
     let public_input: VecFelt252 = serde_json::from_str(&parsed.public_input.to_string()).unwrap();
