@@ -4,7 +4,7 @@ use crate::vec252::VecFelt252;
 use cairo_lang_runner::{Arg, ProfilingInfoCollectionConfig, RunResultValue, SierraCasmRunner};
 use cairo_lang_sierra::program::VersionedProgram;
 use cairo_lang_utils::ordered_hash_map::OrderedHashMap;
-use cairo_proof_parser::parse;
+use cairo_proof_parser::{parse, to_felts};
 use clap::Parser;
 use itertools::Itertools;
 use starknet_ff::FieldElement;
@@ -29,7 +29,7 @@ fn main() -> anyhow::Result<()> {
     let target = cli.target;
     let function = "main";
 
-    let proof: Vec<FieldElement> = parsed.into();
+    let proof: Vec<FieldElement> = to_felts(&parsed)?;
     let proof: VecFelt252 = proof.into();
 
     println!("proof size: {} felts", proof.len());
