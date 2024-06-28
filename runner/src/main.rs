@@ -4,10 +4,11 @@ use crate::vec252::VecFelt252;
 use cairo_lang_runner::{Arg, ProfilingInfoCollectionConfig, RunResultValue, SierraCasmRunner};
 use cairo_lang_sierra::program::VersionedProgram;
 use cairo_lang_utils::ordered_hash_map::OrderedHashMap;
-use cairo_proof_parser::parse;
+use cairo_proof_parser::{parse, to_felts};
 use clap::Parser;
-use itertools::{chain, Itertools};
+use itertools::Itertools;
 use runner::CairoVersion;
+use starknet_ff::FieldElement;
 use std::{
     fs,
     io::{stdin, Read},
@@ -28,23 +29,12 @@ fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
     let mut input = String::new();
     stdin().read_to_string(&mut input)?;
-    let parsed = parse(input)?;
+    let parsed = parse(&input)?;
 
     let function = "main";
 
-    let config: VecFelt252 = serde_json::from_str(&parsed.config.to_string()).unwrap();
-    let public_input: VecFelt252 = serde_json::from_str(&parsed.public_input.to_string()).unwrap();
-    let unsent_commitment: VecFelt252 =
-        serde_json::from_str(&parsed.unsent_commitment.to_string()).unwrap();
-    let witness: VecFelt252 = serde_json::from_str(&parsed.witness.to_string()).unwrap();
-
-    let proof = chain!(
-        config.into_iter(),
-        public_input.into_iter(),
-        unsent_commitment.into_iter(),
-        witness.into_iter()
-    )
-    .collect_vec();
+    let proof: Vec<FieldElement> = to_felts(&parsed)?;
+    let proof: VecFelt252 = proof.into();
 
     println!("proof size: {} felts", proof.len());
 

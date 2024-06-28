@@ -3,6 +3,7 @@ use std::{ops::Deref, str::FromStr};
 use cairo_felt::Felt252;
 use serde::{de::Visitor, Deserialize};
 use serde_json::Value;
+use starknet_ff::FieldElement;
 use thiserror::Error;
 
 #[derive(Error, Debug)]
@@ -123,5 +124,27 @@ impl<'de> Deserialize<'de> for VecFelt252 {
         D: serde::Deserializer<'de>,
     {
         deserializer.deserialize_seq(VecFelt252(Vec::new()))
+    }
+}
+
+impl From<Vec<FieldElement>> for VecFelt252 {
+    fn from(args: Vec<FieldElement>) -> Self {
+        Self(
+            args.into_iter()
+                .map(|f| Felt252::from_bytes_be(&f.to_bytes_be()))
+                .collect(),
+        )
+    }
+}
+
+#[test]
+fn test_felt_to_felt() {
+    let felts = vec![FieldElement::from(42u64), FieldElement::from(43u64)];
+
+    let result = VecFelt252::from(felts.clone());
+
+    assert_eq!(result.0.len(), 2);
+    for (i, j) in felts.into_iter().zip(result.0.into_iter()) {
+        assert_eq!(i.to_string(), j.to_string());
     }
 }
